@@ -1,0 +1,45 @@
+name: ci-workflow
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Enter the environment'
+        required: true
+        default: 'prod'
+
+      logLevel:
+        description: 'Log Level'
+        required: true
+        default: warning
+        type: choice
+        options:
+        - info
+        - warning
+        - dbug
+  push:
+    branches:
+      - master
+jobs:
+        
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Log level check
+        run: |
+          echo " Log level : $LEVEL"
+          echo " Environment : $ENVIRONMENT"
+        env:
+          LEVEL: ${{ inputs.loglevel}}
+          ENVIRONMENT: ${{ inputs.environment}}
+
+
+
+
+
+
+
+
