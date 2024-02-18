@@ -16,9 +16,9 @@ on:
         - info
         - warning
         - dbug
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
 jobs:
         
   log-the-inputs:

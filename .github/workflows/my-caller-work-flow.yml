@@ -1,0 +1,21 @@
+name: my caller work flow
+
+on:
+  workflow_dispatch:
+    inputs:
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: true
+        type: boolean  
+        
+jobs:
+
+  print-logs:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.print_tags }}
+    steps:
+      - name: check out code
+        uses: actions/checkout@v4
+          
+      - name: pring the input tag to STDOUT
+        run: echo the tags are ${{ inputs.print_tags}}  
