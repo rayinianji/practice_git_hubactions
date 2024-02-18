@@ -6,7 +6,11 @@ on:
       print_tags:
         description: 'True to print to STDOUT'
         required: true
-        type: boolean  
+        type: boolean
+      user-name:
+        description: 'user name to called work flow'
+        required: true
+        type: string      
         
 jobs:
 
@@ -16,6 +20,18 @@ jobs:
     steps:
       - name: check out code
         uses: actions/checkout@v4
-          
+
       - name: pring the input tag to STDOUT
-        run: echo the tags are ${{ inputs.print_tags}}  
+        run: echo the tags are ${{ inputs.print_tags}}
+
+  calling-resuable-work-flow:
+    uses: ./.github/workflows/my_called_work_flow.yml
+    with:
+      user-name: ${{ inputs.user-name }}
+
+
+    
+
+
+
+
