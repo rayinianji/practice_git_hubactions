@@ -21,13 +21,19 @@ jobs:
       - name: check out code
         uses: actions/checkout@v4
 
+      - name: check the python version
+        run: python --version
+
+      - name: print git hub workspace
+        run: echo $GITHUB_WORKSPACE
+
       - name: pring the input tag to STDOUT
         run: echo the tags are ${{ inputs.print_tags}}
 
-  calling-resuable-work-flow:
-    uses: ./.github/workflows/my_called_work_flow.yml
-    with:
-      user-name: ${{ inputs.user-name }}
+#   calling-resuable-work-flow:
+#     uses: ./.github/workflows/my_called_work_flow.yml
+#     with:
+#       user-name: ${{ inputs.user-name }}
 
 
     
