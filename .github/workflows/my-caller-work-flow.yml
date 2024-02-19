@@ -31,12 +31,12 @@ jobs:
         run: echo the tags are ${{ inputs.print_tags}}
 
   calling-resuable-work-flow:
-    uses: ./.github/workflows/my_called_work_flow.yml@main
+    uses: ./.github/workflows/my_called_work_flow.yml@master
     with:
       user-name: ${{ inputs.user-name }}
 
   calling-resuabl-work-flow-another-repo:
-    uses: rayinianji/practice_git_hubactions/.github/workflows/my_called_work_flow.yml@main
+    uses: rayinianji/practice_git_hubactions/.github/workflows/my_called_work_flow.yml@master
     with:
       user-name: ${{ inputs.user-name }} 
 
