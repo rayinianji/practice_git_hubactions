@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
     #   - name: calling random action
       - id: foo
-        uses: actions/custum_actions_project@v1
+        uses: rayinianji/custum_actions_project@v1
         with:
           name-of-person : Anjaneyulu Rayini
       - run: echo random number "$RANDOM_NUMBER"
