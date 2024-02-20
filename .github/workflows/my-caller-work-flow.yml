@@ -38,7 +38,7 @@ jobs:
   calling-resuabl-work-flow-another-repo:
     uses: rayinianji/practice_git_hubactions/.github/workflows/my_called_work_flow.yml@master
     with:
-      user-name: ${{ inputs.user-name }} 
+      user-name: ${{ inputs.user-name }}
 
 
     
